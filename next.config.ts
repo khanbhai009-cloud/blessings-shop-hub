@@ -1,7 +1,13 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  swcMinify: false, // Disable SWC compiler
-}
+  swcMinify: true,
+  experimental: {
+    swcLoader: true,
+    swcMinify: true,
+  },
+  compiler: {
+    swcWasm: true,
+  }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
